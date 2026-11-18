@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+</HEAD>
+<BODY bgcolor=white>
+
+<a name="Start">
+<br><br><br>
+<center>
+Welcome to the 
+<FONT SIZE="15">Framsticks</font> world.
+<br>Have a nice time using Framsticks Editor v2.0 !
+</center>
+<br><br><br>
+
+<a name="What">
+<CENTER><B>What is Artificial Life?</B></CENTER><p>
+The objective of the <B>Framsticks</B> project is to study evolution process in a 
+simulated world. It is similar to the real world and uses basic 
+<B>evolution</B> mechanisms to create efficient artificial organisms. 
+These organisms are trying to adapt conditions met in the artificial world. 
+
+<p>The Framsticks project is a research project that belongs to field of science 
+called <B>"Artificial Life" ("AL")</B>. It is connected with <B>"Artificial 
+Intelligence"</B>, but also physics and biology, as we try to simulate nature 
+and living organisms on our computers. The environment is artificial, virtual 
+world on our machine. It doesn't have to be similar to the real world, but 
+sometimes such a experiments might be very interesting, as you can compare 
+simulation results with reality. 
+<p>Simple artificial creatures can be used in computer control of animal's 
+models in films, more sophisticated can learn and <B>improve</B> themselves. 
+They can be taught to avoid obstacles, seek energy spots, follow targets etc. 
+It's very similar to robot control - it is possible to perform useful actions. 
+<p>Like in the real world, in the simulator better-adapted and fit organisms have 
+better chance to survive. Besides, creatures <B>morphology</B> is determined by 
+genes - you can freely build genotypes, so you have an ability to develop 
+organisms of any complexity. After creating an organism you can put it into 
+artificial environment and observe its evolution, 
+improving and adapting to environment conditions. 
+
+<p>This simple model doesn't lead to founding consciousness, intelligence and 
+feelings, but generally self-improvement of artificial organisms can do so. We 
+still don't know if evolution alone created organisms which live among us. 
+Experiments like that can show capabilities of simulated evolution and these can 
+be compared to the real ones. Maybe in the future researches will be able 
+to explain the mystery of our creation? Anyway, this program is a simple way to 
+open a gateway to the "Artificial Life" world and become interested in it's 
+problems and challenges. We hope it will be useful, give you an opportunity to 
+learn something new and have some fun. <p>
+
+<p><br><br><br>
+</center><a name="Brief"><CENTER><B>Brief info</B></CENTER><p>
+Fred is a part of the <b>Framsticks Project</b> which started in 1997. 
+Three-dimensional life simulation is a goal of project. Both physical structures (<b>bodies</b>) and control systems (<b>brains</b>) of creatures are modeled. Fred is a application which allows you to see creature which is actually beeing designed. Use your own imagination to create complex creatures, then put them into Framstics application and see how they evolve. 
+<br><br><br><br>
+</center><a name="Fund"><CENTER><B>Fundamental knowledge</B></CENTER><p>
+Framstick's body consists of parts and joints, neural network are neurons and connections. Parts, Joints, Neurons, Connections (these are four classes of elements) have reference numbers. References start with 0 and every new object in the class gets the next reference number.<br>Each of parts,joins, neurons and connections is decribed by a set of properties. Some of properties are mandatory and some of them are not. Not obligatory parameters, when not defined, get default values.<br><br>
+<b>Part object (p)</b><br><u>Not obligatory:</u><br> x,y,z (position in 3D, all dimensions default=0),<br> m (physical mass, default=1),<br> s (size - for collisions, default=1),<br> dn (density, default=1),<br> fr (friction, default=0.4),<br> ing (ingestion, default=0.25),<br> as (assimilation, default=0.25).<br>
+
+<br>
+<b>Joint object (j)</b><br><u>Obligatory:</u><br>
+p1,p2 (reference numbers of the two connected parts),<br>
+<br><u>Not obligatory:</u><br>
+rx,rx,rz (rotation, for rotations in all dimensions deafult value=0),<br>
+dx,dy,dz (delta option: if you specify any value for dx, all three deltas are used as displacement applied to the second part p2),<br>
+stif (stiffness, default=1),<br>
+rotstif (rotation stiffness, default=1),<br>
+stam (stamina, default=0.25).
+<center><img src="../images/3p2j.jpg"><br>Example: 3 parts and 2 joints</center>
+<br>
+<br>
+
+<b>Neuron object (n)</b><br><u>Obligatory:</u><br>
+p (reference number of the part the neuron is attached to) <br>OR<br>
+j (reference number of the joint the neuron is attached to). 
+<br><u>Not obligatory:</u><br>
+d (neuron class description, like "classname:properties_and_values")<br><br>
+
+
+<b>Connection (c)</b><br><u>Obligatory:</u><br>
+n (reference number of the parent neuron),
+i (reference number of the neuron to be connected as the parent's input),
+<br><u>Not obligatory:</u><br>
+w=1.0 - connection weight
+<br><br>
+<center><img src="../images/9n8c.gif"><br>Neuron's types(from left):N-Neuron(Standard Framsticks neuron), T-Touch(Touch sensor),<br> S-Smell(Smell sensor), *-Const(Constant value), G-Gyroscope(Equilibrium sensor),<br> |-Bend muscle, @-Rotation muscle, Fuzzy-Fuzzy system, Sin-Sinus Generator</center>
+<br><br>
+
+
+<b>Model validity constraints</b><br>
+
+I.at most one joint can directly link two parts<br>
+II.each joint must be connected with two distinct parts<br>
+III.all parts must be directly or indirectly connected with each other<br>
+IV.delta joints must not form cycles<br>
+V.for each joint the part-to-part distance must not exceed the value defined as the maximum Joint.dx (2.0)<br>
+
+
+<br><br><br><br>
+</center><a name="Distrib"><CENTER><B>Distribution</B></CENTER><br>
+Fred 2.0 is <b>freeware</b> which means you can download, install, and use it for free.
+Contact capstone at kagi.com if you want to use Fred sources for development.
+<br><br><br><br>
+</center><a name="Editor"><CENTER><B>f0 editor</B></CENTER><br>
+You can edit creature in two ways: using f0 genotype editor (this forces you to know f0 Framsticks construction language!) or draggin and dropping components in graphical editor (body+neural network). Both ways leads you to fully functional framstick creatures.
+<br><br><br><br>
+</center><a name="Keyb"><CENTER><B>Keyboard shortcuts</B></CENTER><br>
+File menu:
+<table>
+<tr><td width=50> </td><td width=150>Ctrl+N</td><td width=170>New</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+O</td><td width=170>Open</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+D</td><td width=170>Open from internet database</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+S</td><td width=170>Save</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+F4</td><td width=170>Close</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+I</td><td width=170>Framstick's info</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+F4</td><td width=170>Exit</td></tr>
+</table><br>
+Edit menu:
+<table>
+<tr><td width=50> </td><td width=150>Ctrl+Z(or Alt+BackSpace)</td><td width=170>Undo</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+Y(or F4)</td><td width=170>Redo</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+C(or Ctrl+Ins)</td><td width=170>Copy</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+X(or Shift+Del)</td><td width=170>Cut</td></tr>
+<tr><td width=50> </td><td width=150>Ctrl+V(or Shift+Ins)</td><td width=170>Paste</td></tr>
+</table>
+<br><br><br><br>
+</center><a name="F0E"><CENTER><B>f0 Editor</B></CENTER><br>
+f0 editor is prepared for advanced users. Proper use of f0 Editor requires f0 Framstick language knowledge(see <a href="Framstick.html#Fund" target="content">Fundamental knowledge</a>). Each line in f0 describes one object in the model. The syntax is:<br> 
+CLASSID:PROPERTY1,PROPERTY2,... <br>
+<br>
+CLASSID is an alphanumeric identifier of the class. There are 4 object classes(p-part,j-joint,n-neuron,c-connection).<br>
+<img src="../images/Play24.gif" border=1> - Compiles model and updates model<br>
+<img src="../images/Properties.gif" border=1> - Checks model validity (model is not updated)<br>
+<img src="../images/rbrs.gif" border=1> - Indicates change of the model made in any of editors window <br>
+
+<br>
+<br>
+
+<center><img src="../images/F0E.png"></center>
+
+<br><br><br><br>
+</center><a name="Mod"><CENTER><B>Model properties editor</B></CENTER><br>
+Lets you directly input parameters of model's objects. You can easy view current parameters of every model's object, and change their value as you wish.
+<br>
+<center><img src="../images/mod.png"></center>
+
+<br><br><br><br>
+</center><a name="BoE"><CENTER><B>Body Editor</B></CENTER><br>
+This tool let you manipulate with the model's body in graphical mode. Among available functions there are:<br>
+<img src="../images/ZoomIn24.gif" border=1> - zoom in<br>
+<img src="../images/ZoomOut24.gif" border=1> - zoom out<br>
+<img src="../images/Default.gif" border=1> - adjusts view to default <br>
+<img src="../images/Rotate.gif" border=1> - start/stop rotation<br>
+<img src="../images/Delete24.gif" border=1> - removes part or joint(mark part or joint and press putton)<br>
+<img src="../images/AddJ.gif" border=1> - adds joint between two existing parts (mark first part, press button and then mark second part new joint will appear between merked parts)<br>
+<img src="../images/Add24.gif" border=1> - puts part (press button, choose plane (XY,ZY, or XZ) and then point at place you want part to appear)<br>
+<img src="../images/Translate.gif" border=1> - moves parts into indicated point (mark part or parts you want move, press button and choose plane(XY,ZY, or XZ) , drag marked parts), translates joints attached to those parts too.<br>
+
+<br>
+<br>
+<center><img src="../images/BoE.jpg">&nbsp;<img src="../images/boe2.png"></center>
+
+<br><br><br><br>
+
+</center><a name="BrE"><CENTER><B>Brain Editor</B></CENTER><br>
+This tool let you manipulate the brain in graphical mode. There are three ways the brain can be displayed:<br>
+<li>Animated (better looking, with animations, not all functions available)</li>
+<li>Symbols (symbols only, all functions available, required for editing brain structure)</li>
+<li>Names (neurons' names only, all functions available, required for editing brain structure)</li><br>
+<img src="../images/ZoomIn24.gif" border=1> - zoom in<br>
+<img src="../images/ZoomOut24.gif" border=1> - zoom out<br>
+<img src="../images/Default.gif" border=1> - adjusts view to default <br>
+<img src="../images/Rotate.gif" border=1> - start/stop animation(in Animated mode)<br>
+<img src="../images/Add24.gif" border=1> - adds neuron (press button, choose type of neuron and then point at place you want part to appear)<br>
+<img src="../images/Delete24.gif" border=1> - deletes selected neuron<br>
+<img src="../images/AddJ.gif" border=1> - adds connection between two existing neurons (mark first neuron, press button and then mark second neuron-new joint will appear between merked neurons)<br>
+<img src="../images/Network.gif" border=1> - changes neurons alignment<br>
+
+
+
+<br>
+<br>
+<center><img src="../images/BrE.png"></center>
+<br><br><br><br>
+
+</center><a name="Prop"><CENTER><B>Properties of object</B></CENTER><br>
+By right mouse click on the choosen object you can display properties of this object.
+<br>
+<br>
+<center><img src="../images/props.png"></center>
+
+
+
+
+<br><br><br><br>
+</center><a name="over"><CENTER><B>Overlook</B></CENTER><br>
+These are all menus available with all functions description.
+<li><b>menu File</b><ul>
+<li>new - starts new Framstick's model</li>
+<li>open from - opens genotype pool
+<ul>
+<li>file</li>
+<li>inetrnet database</li>
+</ul>
+</li>
+<li>close - closes current model</li>
+<li>save - saves to disk current model</li>
+<li>save as.. - saves current model at specific location & name</li>
+<li>Framstick info - shows general information about Framstick, editable</li>
+<li>exit - exits Fred</li>
+</ul>
+</li>
+
+<li><b>menu Edit</b><ul>
+<li>undo - undo changes, applicable for all changes done in edition process</li>
+<li>redo - redo changes, applicable for all changes done in edition process</li>
+<li>cut</li>
+<li>copy</li>
+<li>paste</li>
+</ul>
+</li>
+
+<li><b>menu Window</b><ul>
+<li>Model - show/hide model window</li>
+<li>Editor - show/hide f0 editor window</li>
+<li>Body - show/hide Body editor window</li>
+<li>Brain - show/hide Brain editor window</li>
+<li>Messages  - show/hide Messages window</li>
+<li>Windows toolbar  - show/hide windows toolbar</li>
+<li>Basic toolbar - show/hide basic toolbar</li>
+<li>Add</li>
+<ul>
+<li>Body window - adds another body window</li>
+<li>Brain window - adds another brain window</li>
+</ul>
+</ul>
+</li>
+
+<li><b>menu View</b><ul>
+<li>Body view</li>
+<ul>
+<li>Wires - enable/disable visualization of wire frames only</li>
+<li>Box - show/hide box</li>
+<li>Background - show/hide background texture</li>
+<li>Details - enable/disable details of the model</li>
+<li>Show neuro panel - enable/disable graphical list of neurons</li>
+</ul>
+
+<li>Look&feel style</li>
+<li>Language</li>
+<li>Look&feel style - lets you choose windows style you prefer<ul>
+<li>metal</li>
+<li>mac</li>
+<li>motif</li>
+<li>windows</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<br><br><br><br>
+</center><a name="open"><CENTER><B>Genotypes in the Internet database</B></CENTER><br>
+You can easily connect to the FEC (Framsticks Experimentation Center) through the Open Internet Database option. This database contains various Framstick genotypes. Browse the database and find interesting model. When you think you created an exceptionally interesting framstick, you can submit it to FEC for a review.
+
+
+
+</BODY></HTML>
